@@ -1,0 +1,42 @@
+form{
+    /* background-color: red; */
+    width:85%;
+    max-width: 650px;
+    margin: 4rem auto;
+    display: flex;
+    background-color: white;
+    padding: 8px;
+    border-radius:15px;
+    box-shadow: 0 3px 6px rgba(255,255,255,.9);
+}
+.taskInput{
+flex:1;
+padding: 0 12px;
+font-size: 18px;
+border: none;
+font-family: sans-serif;
+font-weight: 600;
+&:focus{
+outline:none;
+}
+}
+
+.taskInputBtn{
+    width:18%;
+    padding: 8px 10px;
+    font-size: 18px;
+    border: none;
+    background-color: royalblue;
+    color: white;
+    border-radius: 15px;
+    font-family: sans-serif;
+    font-weight: bold;
+    cursor:pointer;
+
+    &:hover{
+        opacity: .9;
+    }
+    &:active{
+        scale: .98;
+    }
+}
