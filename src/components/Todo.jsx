@@ -1,33 +1,18 @@
 import { useState } from "react";
-import ListItem from "./ListItem";
-
+import Form from "./Form";
+import RenderListItem from "./RenderListItem";
 
 export default function Todo(){
-
-    const [todo,addTodo]=useState("");
     const[todos,pushTodos]=useState([]);
-
-
-    function handleSubmit(e){
-        e.preventDefault();
-        pushTodos([...todos,todo])
-        addTodo("");
-    }
-
 
     return (
         <>
-            <form onSubmit={(e)=> handleSubmit(e)}>
-                <input onChange={(e)=> addTodo(e.target.value)} value={todo} id="todoInput"/>
-                <button type="submit">Add</button>
-            </form>
-            {console.log(todos)}
+           <Form todos={todos} pushTodos={pushTodos} />
             <ul>
-                {todos.map((item,index)=>[
-                    <ListItem key={index} item={item}/> 
-                ])
-                }
+             <RenderListItem todos={todos}/>
+             {console.log(todos)}
             </ul>
         </>
+        
     )
 }
