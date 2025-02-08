@@ -1,0 +1,10 @@
+header{
+    background-color: orangered;
+    color: white;
+    font-size: 2.5em;
+    padding: 30px;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 3px;
+    /* height: 5rem; */
+}

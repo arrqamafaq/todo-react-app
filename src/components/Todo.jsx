@@ -11,6 +11,7 @@ export default function Todo(){
     function handleSubmit(e){
         e.preventDefault();
         pushTodos([...todos,todo])
+        addTodo("");
     }
 
 
