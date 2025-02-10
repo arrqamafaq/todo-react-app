@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Form from "./Form";
-import RenderListItem from "./RenderListItem";
+import TodoList from "./TodoList";
 
 export default function Todo(){
     const[todos,pushTodos]=useState([]);
@@ -8,10 +8,8 @@ export default function Todo(){
     return (
         <>
            <Form todos={todos} pushTodos={pushTodos} />
-            <ul>
-             <RenderListItem todos={todos}/>
-             {console.log(todos)}
-            </ul>
+            <TodoList todos={todos}/>
+            {console.log(todos)}
         </>
         
     )
