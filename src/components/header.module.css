@@ -7,3 +7,10 @@ header{
     text-align: center;
     letter-spacing: 3px;
 }
+@media (max-width:600px) {
+    header{
+        gap:15px;
+        font-size: 2rem;
+        padding: 20px;
+    }
+}

@@ -1,0 +1,21 @@
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 18px;
+    gap:80px;
+    font-size: 1.6rem;
+    flex-wrap: wrap;
+    background-color: royalblue;
+    position: fixed;
+    bottom: 0;
+    left:0;
+    width: 100%;
+}
+
+@media (max-width:600px) {
+    footer{
+        gap:15px;
+        font-size: 1.2rem;
+    }
+}

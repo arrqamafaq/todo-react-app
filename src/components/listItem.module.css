@@ -12,11 +12,11 @@
 .text{
     font-size: 18px;
     font-weight: 500;
-}
-.text{
     flex: 1;
     padding: 12px;
+    word-break: break-all;
 }
+
 .completed{
     opacity: .4;
     text-decoration: line-through;
