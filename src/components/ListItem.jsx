@@ -1,17 +1,24 @@
 import styles from "./listItem.module.css"
+import saveTodos from "./SaveTodos";
+
+
 export default function ListItem({item,todos,setTodos}){
 
     function handleDeleteBtn(id){
         console.log("Delete button clicked with id:",{id});
-        setTodos(todos.filter((todo)=> todo.value !== id.value));
+        const updatedTodos = todos.filter((todo)=> todo.value !== id.value);
+        setTodos(updatedTodos);
+        saveTodos(updatedTodos);
         console.log(todos);
     }
 
     function handleCompleted(item){
-        const newArr = todos.map((todo)=> todo.value === item.value ? {...todo,completed:!todo.completed}:todo);
+        const updatedTodos = todos.map((todo)=> todo.value === item.value ? {...todo,completed:!todo.completed}:todo);
         console.log("completed: ",item.completed)
-        setTodos(newArr);
+        setTodos(updatedTodos);
+        saveTodos(updatedTodos);
     }
+    
 
     const completedClass = item.completed ? styles.completed : "";
     return (

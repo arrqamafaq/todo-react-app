@@ -4,9 +4,13 @@ import TodoList from "./TodoList";
 import Footer from "./Footer";
 
 export default function Todo(){
-    const[todos,setTodos] = useState([]);
+    const loadTodos =()=> JSON.parse(localStorage.getItem("todos")) || []; 
+    console.log(loadTodos)
+    const[todos,setTodos] = useState(loadTodos);
+    console.log(todos);
     const completedTodos = todos.filter((todo)=> todo.completed).length;
     const totalTodos=todos.length;
+
 
     return (
         <>

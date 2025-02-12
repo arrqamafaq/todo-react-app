@@ -1,14 +1,16 @@
 import { useState } from "react";
 import styles from "./form.module.css"
+import saveTodos from "./SaveTodos";
 
 export default function Form({todos , setTodos}){
     const [todo,addTodo]=useState({value:"",completed:false});
     
-    
     function handleSubmit(e){
         e.preventDefault();
         if(todo.value.trim() === "") return;
-        setTodos([...todos,todo])
+        const updatedTodos=[...todos,todo];
+        setTodos(updatedTodos);
+        saveTodos(updatedTodos);
         addTodo({value:"",completed:false});
     }
 
