@@ -3,12 +3,12 @@ import Form from "./Form";
 import TodoList from "./TodoList";
 
 export default function Todo(){
-    const[todos,pushTodos] = useState([]);
+    const[todos,setTodos] = useState([]);
 
     return (
         <>
-           <Form todos={todos} pushTodos={pushTodos} />
-            <TodoList todos={todos} pushTodos={pushTodos}/>
+           <Form todos={todos} setTodos={setTodos} />
+            <TodoList todos={todos} setTodos={setTodos}/>
             {console.log(todos)}
         </>
         
