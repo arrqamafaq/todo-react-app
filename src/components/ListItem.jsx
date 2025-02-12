@@ -4,16 +4,16 @@ import saveTodos from "./SaveTodos";
 
 export default function ListItem({item,todos,setTodos}){
 
-    function handleDeleteBtn(id){
-        console.log("Delete button clicked with id:",{id});
-        const updatedTodos = todos.filter((todo)=> todo.value !== id.value);
+    function handleDeleteBtn(item){
+        console.log("Delete button clicked with id:",item.id);
+        const updatedTodos = todos.filter((todo)=> todo.id !== item.id);
         setTodos(updatedTodos);
         saveTodos(updatedTodos);
         console.log(todos);
     }
 
     function handleCompleted(item){
-        const updatedTodos = todos.map((todo)=> todo.value === item.value ? {...todo,completed:!todo.completed}:todo);
+        const updatedTodos = todos.map((todo)=> todo.id === item.id ? {...todo,completed:!todo.completed}:todo);
         console.log("completed: ",item.completed)
         setTodos(updatedTodos);
         saveTodos(updatedTodos);
@@ -24,7 +24,7 @@ export default function ListItem({item,todos,setTodos}){
     return (
         <li className={styles.listItem}>
         <div  onClick={()=>handleCompleted(item)} className={`${styles.text} ${completedClass}`}>{item.value}</div>
-        <button onClick ={()=>handleDeleteBtn(item)} id={item.value} className={styles.deleteBtn}>X</button>
+        <button onClick ={()=>handleDeleteBtn(item)} item={item} className={styles.deleteBtn}>X</button>
         </li>
     )
 }
