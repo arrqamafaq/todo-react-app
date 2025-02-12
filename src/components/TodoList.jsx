@@ -3,9 +3,10 @@ import styles from "./TodoList.module.css"
 
 export default function TodoList({todos,setTodos}){
 
+    const sortedTodos = todos.slice().sort((a,b)=>Number(a.completed) -Number(b.completed)); 
     return (
         <ul className={styles.todoList}>
-        {todos.map((item,index)=>(
+        {sortedTodos.map((item,index)=>(
             <ListItem key={index} item={item} todos={todos} setTodos={setTodos}/> 
         ))
     }

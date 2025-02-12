@@ -7,6 +7,7 @@ export default function Form({todos , setTodos}){
     
     function handleSubmit(e){
         e.preventDefault();
+        if(todo.value.trim() === "") return;
         setTodos([...todos,todo])
         addTodo({value:"",completed:false});
     }
