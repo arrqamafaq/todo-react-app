@@ -1,5 +1,4 @@
 import styles from "./listItem.module.css"
-import saveTodos from "./SaveTodos";
 
 
 export default function ListItem({item,todos,setTodos}){
@@ -8,7 +7,6 @@ export default function ListItem({item,todos,setTodos}){
         console.log("Delete button clicked with id:",item.id);
         const updatedTodos = todos.filter((todo)=> todo.id !== item.id);
         setTodos(updatedTodos);
-        saveTodos(updatedTodos);
         console.log(todos);
     }
 
@@ -16,7 +14,7 @@ export default function ListItem({item,todos,setTodos}){
         const updatedTodos = todos.map((todo)=> todo.id === item.id ? {...todo,completed:!todo.completed}:todo);
         console.log("completed: ",item.completed)
         setTodos(updatedTodos);
-        saveTodos(updatedTodos);
+      
     }
     
 

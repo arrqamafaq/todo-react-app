@@ -1,6 +1,5 @@
 import { useState } from "react";
 import styles from "./form.module.css"
-import saveTodos from "./SaveTodos";
 
 export default function Form({todos , setTodos}){
     const [todo,addTodo]=useState({value:"",completed:false,id:null});
@@ -14,7 +13,6 @@ export default function Form({todos , setTodos}){
             id: todo.value+index
         }));
         setTodos(todosWithId);
-        saveTodos(todosWithId);
         addTodo({value:"",completed:false,id:null});
     }
 
